@@ -67,18 +67,18 @@ def main():
     V_vapor = (R * T) / PT
 
     st.subheader("Initial Guess Values")
-    st.write(f"Liquid-phase mole fraction of CO₂ (X_CO2): {X_CO2:.5f}")
-    st.write(f"Liquid-phase mole fraction of CS₂ (X_CS2): {X_CS2:.5f}")
-    st.write(f"Total Pressure (PT): {PT:.2f} Pa")
-    st.write(f"Liquid molar volume (V_liquid): {V_liquid:.5e} m³/mol")
-    st.write(f"Vapor molar volume (V_vapor): {V_vapor:.5e} m³/mol")
+    st.write(f"Liquid-phase mole fraction of CO₂ (X_CO2): {X_CO2}")
+    st.write(f"Liquid-phase mole fraction of CS₂ (X_CS2): {X_CS2}")
+    st.write(f"Total Pressure (PT): {PT} Pa")
+    st.write(f"Liquid molar volume (V_liquid): {V_liquid} m³/mol")
+    st.write(f"Vapor molar volume (V_vapor): {V_vapor} m³/mol")
     
     # ---------- Critical Properties Inputs for Equation System ----------
     st.header("Critical Properties Inputs")
-    Tc_CO2 = st.number_input("Critical Temperature of CO₂ (K)", value=304.21, format="%.5f")
-    Pc_CO2 = st.number_input("Critical Pressure of CO₂ (Pa)", value=7383000, format="%.5f")
-    Tc_CS2 = st.number_input("Critical Temperature of CS₂ (K)", value=552.49, format="%.5f")
-    Pc_CS2 = st.number_input("Critical Pressure of CS₂ (Pa)", value=7329000, format="%.5f")
+    Tc_CO2 = st.number_input("Critical Temperature of CO₂ (K)", value=304.21)
+    Pc_CO2 = st.number_input("Critical Pressure of CO₂ (Pa)", value=7383000)
+    Tc_CS2 = st.number_input("Critical Temperature of CS₂ (K)", value=552.49)
+    Pc_CS2 = st.number_input("Critical Pressure of CS₂ (Pa)", value=7329000)
     
     # Run the full calculation when button is pressed
     if st.button("Run Calculation"):
@@ -210,13 +210,13 @@ def main():
             x2 = 1 - x1
             y2 = 1 - y1
             st.subheader("Equation System Solution")
-            st.write(f"Liquid-phase mole fraction of CO₂ (x1): {x1:.5f}")
-            st.write(f"Liquid-phase mole fraction of CS₂ (x2): {x2:.5f}")
-            st.write(f"Vapor-phase mole fraction of CO₂ (y1): {y1:.5f}")
-            st.write(f"Vapor-phase mole fraction of CS₂ (y2): {y2:.5f}")
-            st.write(f"Vapor molar volume (V_vapor): {V_V:.5e} m³/mol")
-            st.write(f"Liquid molar volume (V_liquid): {V_L:.5e} m³/mol")
-            st.write(f"Total Pressure (P): {P_sol:.2f} Pa")
+            st.write(f"Liquid-phase mole fraction of CO₂ (x1): {x1}")
+            st.write(f"Liquid-phase mole fraction of CS₂ (x2): {x2}")
+            st.write(f"Vapor-phase mole fraction of CO₂ (y1): {y1}")
+            st.write(f"Vapor-phase mole fraction of CS₂ (y2): {y2}")
+            st.write(f"Vapor molar volume (V_vapor): {V_V} m³/mol")
+            st.write(f"Liquid molar volume (V_liquid): {V_L} m³/mol")
+            st.write(f"Total Pressure (P): {P_sol} Pa")
         else:
             st.error("Solution did not converge. Please check your inputs or try different initial guesses.")
 
